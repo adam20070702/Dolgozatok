@@ -12,5 +12,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <DataGrid x:Name="tabla" Grid.Row="0" Margin="10" HeadersVisibility="Column"/>
     </Grid>
 </Window>
