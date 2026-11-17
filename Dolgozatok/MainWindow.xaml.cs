@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Dolgozatok
 {
@@ -67,7 +68,13 @@ namespace Dolgozatok
 
         private void ment_Click(object sender, RoutedEventArgs e)
         {
-
+            List<string> sorok = new List<string>();
+            foreach (Dolgozat d in lista)
+            {
+                sorok.Add(d.Nev + ";" + d.Eletkor + ";" + d.Pontszam);
+            }
+            File.WriteAllLines("dolgozatok.txt", sorok);
+            MessageBox.Show("Mentve!");
         }
     }
 }
