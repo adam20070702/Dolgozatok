@@ -46,7 +46,23 @@ namespace Dolgozatok
 
         private void hozzaad_Click(object sender, RoutedEventArgs e)
         {
+            int kor = 0;
+            int pont = 0;
 
+            if (nevBox.Text == "" || !int.TryParse(korBox.Text, out kor) || !int.TryParse(pontBox.Text, out pont))
+            {
+                MessageBox.Show("Hibás vagy hiányzó adat!");
+                return;
+            }
+
+            lista.Add(new Dolgozat(nevBox.Text, kor, pont));
+
+            tabla.ItemsSource = null;
+            tabla.ItemsSource = lista;
+
+            nevBox.Text = "";
+            korBox.Text = "";
+            pontBox.Text = "";
         }
 
         private void ment_Click(object sender, RoutedEventArgs e)
