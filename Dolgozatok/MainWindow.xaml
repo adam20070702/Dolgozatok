@@ -21,5 +21,9 @@
             <TextBlock Text="Pontszám:" VerticalAlignment="Center" Margin="20,0,10,0"/>
             <TextBox x:Name="pontBox" Width="60" Height="30"/>
         </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <Button x:Name="hozzaad" Content="Hozzáadás" Width="125" Height="35" Click="hozzaad_Click"/>
+            <Button x:Name="ment" Content="Mentés" Width="125" Height="35" Margin="10,0,0,0" Click="ment_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
